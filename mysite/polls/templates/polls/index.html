@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+    {% for question in questions %}
+<li>
+    <a href="{% url 'polls:detail' question.id %}">
+        {{question.question_text}}
+    </a>
+</li>
+    {% endfor %}
+{% endblock %}
